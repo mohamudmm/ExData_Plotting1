@@ -8,7 +8,7 @@ colnames(exdata2) <- cnames
 exdata2$Date <- as.Date(exdata2$Date, format = '%d/%m/%Y')
 exdata2$Time <- as.character(exdata2$Time)
 exdata2$datetime <- as.POSIXct(paste(exdata2$Date,exdata2$Time))
-#open graphic device
+#open graphic device and send the plot
 png(file="plot4.png",width=480,height=480)
 par(mfrow = c(2,2),mar=c(4,4,2,1),oma=c(0,0,2,0))
 plot(exdata2$datetime,as.numeric(as.character(exdata2$Global_active_power)),ylab="Global active power",xlab="",type ='l')
